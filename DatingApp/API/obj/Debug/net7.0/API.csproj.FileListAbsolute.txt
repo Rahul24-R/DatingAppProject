@@ -5,17 +5,11 @@ C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\bin\Debug\net
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\bin\Debug\net7.0\API.runtimeconfig.json
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\bin\Debug\net7.0\API.dll
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\bin\Debug\net7.0\API.pdb
-C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\bin\Debug\net7.0\Microsoft.OpenApi.dll
-C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\API.csproj.AssemblyReference.cache
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\API.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\API.AssemblyInfoInputs.cache
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\API.AssemblyInfo.cs
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\API.csproj.CoreCompileInputs.cache
-C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\staticwebassets\msbuild.API.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\staticwebassets\msbuild.build.API.props
@@ -25,7 +19,6 @@ C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\scopedcss\bundle\API.styles.css
-C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\API.csproj.CopyComplete
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\API.dll
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\refint\API.dll
 C:\Users\ashwi\Documents\project\Rahul_Learning\demo\DatingApp\API\obj\Debug\net7.0\API.pdb
