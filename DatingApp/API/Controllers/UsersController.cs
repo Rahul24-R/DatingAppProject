@@ -2,6 +2,7 @@ using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
@@ -17,17 +18,17 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public ActionResult<IEnumerable<AppUser>> GetUsers(){ //action result is used to handle API responses like 404 not found etc..
+        public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers(){ //action result is used to handle API responses like 404 not found etc..
 
-            var user = _context.Users.ToList();
+            var user =await _context.Users.ToListAsync();
             if(user==null){
                 return NotFound();
             }
             return user;
         }
         [HttpGet("{id}")]       //specific user
-        public ActionResult<AppUser> GetUser(int id){
-            return _context.Users.Find(id);
+        public async Task<ActionResult<AppUser>> GetUser(int id){
+            return await _context.Users.FindAsync(id);
         }
     }
 }
