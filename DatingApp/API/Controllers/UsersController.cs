@@ -19,8 +19,8 @@ namespace API.Controllers
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers(){ //action result is used to handle API responses like 404 not found etc..
-
-            var user =await _context.Users.ToListAsync();
+                //async to mke the code async and task<> where the task has a return value, if it doesnt it  async task getusers()
+            var user =await _context.Users.ToListAsync();   //await to complete the task , then to proceed with next task in the method
             if(user==null){
                 return NotFound();
             }
