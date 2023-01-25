@@ -6,9 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
-    [ApiController]                 //indicate that this is used for HTTP api response
-    [Route("api/[controller]")]                 // localhost/api/user - where [controller] is a place holer and will be like usercontroller
-    public class UsersController:ControllerBase //when an api is called this class object is created
+    public class UsersController:BaseApiController //when an api is called this class object is created
     {
         private readonly DataContext _context;
 
