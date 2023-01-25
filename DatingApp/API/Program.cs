@@ -13,7 +13,7 @@ builder.Services.AddCors();
    //adding cors service
 var app = builder.Build();
 // Configure the HTTP request pipeline.
-app.UseCors(builder=>builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));      //allowing alltype of header and methods
+app.UseCors(builder=>builder.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:4200"));      //allowing alltype of header and methods
 app.MapControllers();
 
 app.Run();
