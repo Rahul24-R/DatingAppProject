@@ -53,6 +53,25 @@ namespace API.Controllers
             return user;
         }
 
+        [HttpPost("login")]
+        public async Task <ActionResult<AppUser>> Login(LoginDto logindto){
+
+            var user = await context.Users.SingleOrDefaultAsync(x => x.UserName==logindto.username);
+            if(user == null){
+                return Unauthorized("User not Found");
+            }
+
+            using var hmac = new HMACSHA512(user.PasswordSalt);     //we pass the key to use the same password hashing
+            var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(logindto.password)); //computedHash is am array of bytes
+
+            for(int i=0 ; i<computedHash.Length;i++){
+                if(computedHash[i]!= user.PasswordHash[i]){
+                    return Unauthorized("invalid password");
+                }
+            }
+            return user;
+        }
+
         private async Task<bool> userExist(string username){
             return await context.Users.AnyAsync(x=>x.UserName==username.ToLower());
         }
