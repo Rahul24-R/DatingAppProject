@@ -1,5 +1,6 @@
 using System.Text;
 using API.Data;
+using API.Extensions;
 using API.Interfaces;
 using API.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,21 +12,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddDbContext<DataContext>(opt => {                                 //adding DataContxt as a service
-    opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));  //reading the connection string from config file
-});
-builder.Services.AddCors();  
-builder.Services.AddScoped<ITokenService,TokenService>();
-//install package microsoft.aspnetcore.authenticatio.jwtbearer
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-{
-    options.TokenValidationParameters=new TokenValidationParameters{ //parameters for token validation
-        ValidateIssuerSigningKey=true,          //the jwt token requires a signed issuer
-        IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["TokenKey"])),   //getting the signature key
-        ValidateIssuer=false,       // no need to validate the issues
-        ValidateAudience=false
-    };
-});
+builder.Services.AddApplicationServices(builder.Configuration);     //extension method to add services to services -application services
+builder.Services.AddIdentityServices(builder.Configuration);        //extension method for identity services - JWT token service
    //adding cors service
 var app = builder.Build();
 // Configure the HTTP request pipeline.
