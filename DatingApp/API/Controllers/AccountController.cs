@@ -3,17 +3,21 @@ using System.Text;
 using API.Data;
 using API.DTO;
 using API.Entities;
+using API.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace API.Controllers
 {
     public class AccountController:BaseApiController
     {
         private readonly DataContext context;
+        private readonly ITokenService tokenservice;
 
-        public AccountController(DataContext context)
+        public AccountController(DataContext context,ITokenService tokenservice) // we need the tokenservice to create token the concrete class is taken from the program.cs
         {
+            this.tokenservice = tokenservice;
             this.context = context;
             
         }
@@ -34,7 +38,7 @@ namespace API.Controllers
         //     return user;
         // }
         [HttpPost("register")]      //api/account/register?username=abcd&password=pwd
-        public async Task<ActionResult<AppUser>> Register(RegisterDto registerdto){     //using objects -DTO (Data transfer Object)
+        public async Task<ActionResult<UserDto>> Register(RegisterDto registerdto){     //using objects -DTO (Data transfer Object)
             if(await userExist(registerdto.Username)){
                 return BadRequest("User Exists");
             }
@@ -50,11 +54,14 @@ namespace API.Controllers
             context.Users.Add(user);
             await context.SaveChangesAsync();
 
-            return user;
+            return new UserDto {           //we are passing the object with token and passing it as a session
+                Username=user.UserName,
+                Token=tokenservice.CreateToken(user)
+            };
         }
 
         [HttpPost("login")]
-        public async Task <ActionResult<AppUser>> Login(LoginDto logindto){
+        public async Task <ActionResult<UserDto>> Login(LoginDto logindto){
 
             var user = await context.Users.SingleOrDefaultAsync(x => x.UserName==logindto.username);
             if(user == null){
@@ -69,7 +76,10 @@ namespace API.Controllers
                     return Unauthorized("invalid password");
                 }
             }
-            return user;
+            return new UserDto {
+                Username=user.UserName,             //login the user and pass the JWT session
+                Token=tokenservice.CreateToken(user)//passed token can be decoded at https://jwt.ms
+            };
         }
 
         private async Task<bool> userExist(string username){
