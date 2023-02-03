@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountServiceService } from '../_Services/account-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,14 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   model:any ={}
+  loggedIn=false;
 
-  constructor() { }
+  constructor(private accountservice:AccountServiceService) { } //mentioning the service we are injecting
 
   ngOnInit(): void {
   }
 
   login(){
-    console.log(this.model);
+    this.accountservice.login(this.model).subscribe({
+      next:res =>{
+        console.log(res),
+        this.loggedIn=true;
+      },
+      error:err=> console.log(err)
+    })
   }
 
 }
