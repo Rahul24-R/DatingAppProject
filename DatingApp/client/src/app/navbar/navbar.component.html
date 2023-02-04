@@ -15,9 +15,9 @@
           <a class="nav-link " (click)="logout()">Log out</a>
         </li>
       </ul>
-      <div *ngIf="loggedIn" class="dropdown">
-        <a href="" class="dropdown-toggle" class="text-light">Welcome {{model.username}}</a>
-        <div class="dropdown-menu">
+      <div *ngIf="loggedIn" class="dropdown" dropdown>    <!--Angular directive for the dropdown module-->
+        <a class="dropdown-toggle" class="text-light" dropdownToggle>Welcome {{model.username}}</a> <!--Angular directive for the dropdown toggel module-->
+        <div class="dropdown-menu" *dropdownMenu>
           <div class="dropdown-item">Edit</div>
           <div class="dropdown-item" (click)="logout()">Logout</div>
         </div>
