@@ -13,8 +13,14 @@ export class NavbarComponent implements OnInit {
   constructor(private accountservice:AccountServiceService) { } //mentioning the service we are injecting
 
   ngOnInit(): void {
+    this.getCurrentUser();  // checking if the user is already logged in
   }
-
+ getCurrentUser(){
+  this.accountservice.currentUser$.subscribe({
+    next:user=>this.loggedIn=!!user,    //this !! turn it to a boolen , if there is a user it returns true
+    error:err=>console.log(err),
+  })
+ }
   login(){
     this.accountservice.login(this.model).subscribe({
       next:res =>{
@@ -26,6 +32,7 @@ export class NavbarComponent implements OnInit {
   }
 
   logout(){
+    this.accountservice.logout();
     this.loggedIn=false;
   }
 
