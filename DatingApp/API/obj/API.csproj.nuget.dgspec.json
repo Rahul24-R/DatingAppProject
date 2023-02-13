@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ashwi\\Documents\\project\\Rahul_Learning\\demo\\DatingApp\\API\\API.csproj": {}
+    "C:\\Users\\ashwi\\Documents\\project\\Rahul_Learning\\demo\\DatingApp\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ashwi\\Documents\\project\\Rahul_Learning\\demo\\DatingApp\\API\\API.csproj": {
+    "C:\\Users\\ashwi\\Documents\\project\\Rahul_Learning\\demo\\DatingApp\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ashwi\\Documents\\project\\Rahul_Learning\\demo\\DatingApp\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\ashwi\\Documents\\project\\Rahul_Learning\\demo\\DatingApp\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\ashwi\\Documents\\project\\Rahul_Learning\\demo\\DatingApp\\API\\API.csproj",
+        "projectPath": "C:\\Users\\ashwi\\Documents\\project\\Rahul_Learning\\demo\\DatingApp\\api\\API.csproj",
         "packagesPath": "C:\\Users\\ashwi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ashwi\\Documents\\project\\Rahul_Learning\\demo\\DatingApp\\API\\obj\\",
+        "outputPath": "C:\\Users\\ashwi\\Documents\\project\\Rahul_Learning\\demo\\DatingApp\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ashwi\\AppData\\Roaming\\NuGet\\NuGet.Config",

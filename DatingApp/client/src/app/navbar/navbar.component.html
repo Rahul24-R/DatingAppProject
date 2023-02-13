@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
   <div class="container">
     <a class="navbar-brand" href="#">ZENDA</a>
-      <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="loggedIn">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="currentUser$|async">
         <li class="nav-item">
           <a class="nav-link "href="#">Matches</a>
         </li>
@@ -15,14 +15,14 @@
           <a class="nav-link " (click)="logout()">Log out</a>
         </li>
       </ul>
-      <div *ngIf="loggedIn" class="dropdown" dropdown>    <!--Angular directive for the dropdown module-->
+      <div *ngIf="currentUser$ |async" class="dropdown" dropdown>    <!--Angular directive for the dropdown module-->
         <a class="dropdown-toggle" class="text-light" dropdownToggle>Welcome {{model.username}}</a> <!--Angular directive for the dropdown toggel module-->
         <div class="dropdown-menu" *dropdownMenu>
           <div class="dropdown-item">Edit</div>
           <div class="dropdown-item" (click)="logout()">Logout</div>
         </div>
       </div>
-      <form *ngIf="!loggedIn" #loginform="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off" >
+      <form *ngIf="!(currentUser$|async)" #loginform="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off" >
         <input
         name="username"
         [(ngModel)]="model.username"
